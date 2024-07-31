@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "info-hud",
+	"version": "${version}",
+	"name": "Info Hud",
+	"description": "InfoHUD is a Minecraft Fabric mod designed to enhance your gameplay by displaying essential information on your screen. It provides FPS, coordinates, day count, world or server name, vehicle speed, Elytra speed, and more.",
+	"authors": [
+		"PhantomZ3",
+		"Drypted"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/info-hud/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.phantomz3.InfoHud"
+		],
+		"client": [
+			"com.phantomz3.InfoHudClient"
+		],
+		"fabric-datagen": [
+			"com.phantomz3.InfoHudDataGenerator"
+		],
+		"modmenu": [
+			"com.phantomz3.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"info-hud.mixins.json",
+		{
+			"config": "info-hud.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
